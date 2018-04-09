@@ -4,7 +4,7 @@ DIR=`pwd`
 for i in *vn; 
 	do 
 		cd "$DIR"/$i; 
-		rm $i.mailservers
+		rm $i.mailservers 2>/dev/null
 		for j in `cat *domains`
 			do
 				LOWNS=`dig +short MX $j | sort -n | nawk '{print $2; exit}'` 
